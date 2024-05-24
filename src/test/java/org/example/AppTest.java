@@ -16,13 +16,13 @@ public class AppTest {
         @Test
         public void getTest(){
             given().log().all()
-                    .when().get("https://jsonplaceholder.typicode.com/posts")
+                    .when().get("/posts")
                     .then().log().all().statusCode(200);
         }
         @Test
         public void getTestUserId1(){
             given().log().all()
-                .when().get("https://jsonplaceholder.typicode.com/posts/1")
+                .when().get("/posts/1")
                 .then().log().all().statusCode(200);
         }
         @Test
@@ -42,7 +42,7 @@ public class AppTest {
         @Test
         public void deleteUser() {
             given().log().uri()
-                .when().delete("https://jsonplaceholder.typicode.com/posts/1")
+                .when().delete("/posts/1")
                 .then().statusCode(200);
         }
     }
